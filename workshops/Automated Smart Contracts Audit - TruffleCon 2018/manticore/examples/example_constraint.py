@@ -20,5 +20,5 @@ for state in m.terminated_states:
         # we do not consider the path were a == 65
         state.constrain(symbolic_var != 65)
         if solver.check(state.constraints):
-            print("Bug found in {}".format(m.workspace))
+            print(f"Bug found in {m.workspace}")
             m.generate_testcase(state, 'BugFound')

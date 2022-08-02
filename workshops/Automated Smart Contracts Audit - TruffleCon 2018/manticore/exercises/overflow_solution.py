@@ -28,5 +28,5 @@ for state in m.running_states:
     state.constrain(Operators.UGT(value_0, last_return))
 
     if solver.check(state.constraints):
-        print("Overflow found! see {}".format(m.workspace))
+        print(f"Overflow found! see {m.workspace}")
         m.generate_testcase(state, 'OverflowFound')

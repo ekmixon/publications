@@ -18,15 +18,15 @@ contract_account.add(value_1)
 contract_account.sellerBalance()
 
 for state in m.running_states:
-    # Check if input0 > sellerBalance
+   # Check if input0 > sellerBalance
 
-    # last_return is the data returned
-    last_return = state.platform.transactions[-1].return_data
-    last_return = ABI.deserialize("uint", last_return)
+   # last_return is the data returned
+   last_return = state.platform.transactions[-1].return_data
+   last_return = ABI.deserialize("uint", last_return)
 
-    state.constrain(Operators.UGT(value_0, last_return))
+   state.constrain(Operators.UGT(value_0, last_return))
 
-    if state.is_feasible():
-        print("Overflow found! see {}".format(m.workspace))
-        m.generate_testcase(state, 'OverflowFound')
+   if state.is_feasible():
+      print(f"Overflow found! see {m.workspace}")
+      m.generate_testcase(state, 'OverflowFound')
 

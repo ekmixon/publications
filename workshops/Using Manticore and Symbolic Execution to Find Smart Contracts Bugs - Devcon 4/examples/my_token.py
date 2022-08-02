@@ -48,7 +48,7 @@ for state in m.running_states:
     # Check if it is possible to have balance_after > balance_before
     state.constrain(Operators.UGT(balance_after, balance_before))
     if state.is_feasible():
-        print("Bug found! see {}".format(m.workspace))
+        print(f"Bug found! see {m.workspace}")
         m.generate_testcase(state, 'Bug')
         bug_found = True
 

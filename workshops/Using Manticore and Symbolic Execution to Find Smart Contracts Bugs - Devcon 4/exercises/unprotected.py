@@ -34,5 +34,5 @@ for state in m.running_states:
     state.constrain(balance > 1)
 
     if state.is_feasible():
-        print("Attacker can steal the ether! see {}".format(m.workspace))
+        print(f"Attacker can steal the ether! see {m.workspace}")
         m.generate_testcase(state, 'WalletHack')

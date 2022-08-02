@@ -12,5 +12,5 @@ contract_account = m.solidity_create_contract(source_code,
 symbolic_var = m.make_symbolic_value()
 contract_account.f(symbolic_var)
 
-print("Results are in {}".format(m.workspace))
+print(f"Results are in {m.workspace}")
 m.finalize() # stop the exploration
